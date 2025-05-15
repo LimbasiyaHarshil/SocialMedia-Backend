@@ -27,11 +27,12 @@ mongoose
             useNewUrlParser: true,
             useUnifiedTopology: true
     })
-    .then(() => 
-        app.listen(process.env.PORT, () => 
-            console.log('Listening on port ' + process.env.PORT )
+    .then(() => {
+        const PORT = process.env.PORT || 5000;
+        app.listen(PORT, () => 
+            console.log('Listening on port ' + PORT )
         )
-    )
+    })
     .catch((error) => console.log(error));
  
 //Usage Of Routes

@@ -1,0 +1,98 @@
+services:
+  - type: web
+    name: socialmedia-backend
+    env: node
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGO_DB
+        sync: false # This will require manual setup in the Render dashboardGitHub Copilot
+        I'll help find relevant code for deploying the backend to Render. Let me search for relevant files and configuration that would be needed for deployment.
+        
+        Let's first look at the main entry point of the application to understand how the server is set up. I'll help you find the relevant code for deploying the backend to Render. Let me search through your workspace to find the necessary files.
+        
+        First, let's look at the main entry point of your application to understand the server setup:
+        
+        Read index.js, lines 1 to 41
+        
+        I'll help you find all the relevant code needed for deploying your backend to Render. Let's start by examining the key files that will be important for deployment.
+        
+        First, let's look at the main server setup in index.js, which we've already examined. This shows the server configuration, which is crucial for deployment. Now, let's check the package.json file to understand dependencies and scripts:
+        
+        Read package.json, lines 1 to 25
+        
+        I'll help you find relevant code for deploying your backend to Render. Let's examine key files to understand what's needed for deployment.
+        
+        First, let's look at the main entry point of your application:
+        
+        Read index.js, lines 1 to 41
+        
+        I'll help you find the relevant code for deploying your backend to Render. Let me search through your codebase to identify the key files and configuration needed for deployment.
+        
+        First, let's understand the main server setup by examining the entry point of your application:
+        
+        Read index.js, lines 1 to 41
+        
+        I'll help you find all the code relevant to deploying your backend to Render. Let me investigate your codebase for deployment-related information.
+        
+        First, let's look at the main entry point of your application, which is crucial for deployment:
+        
+        I'll help you deploy your backend to Render. Let's set up the necessary configurations to make your app deployment-ready.
+        
+        First, I need to create a few files that Render requires for deployment:
+        
+        Let's create a render.yaml configuration file:
+        Created render.yaml
+        
+        Next, let's modify the package.json file to make it deployment-ready by updating the start script to use node instead of nodemon for production:
+        package.json+2-1
+        Let's update index.js to use the PORT environment variable more flexibly (Render might assign its own port):
+        index.js+5-4
+        Let's also create a .env.example file so you know what environment variables to set up in Render:
+        Created .env.example
+        
+        Now, let's create a simple Procfile (which some deployment platforms use):
+        Created Procfile
+        
+        Now let me explain how to deploy your backend to Render:
+        
+        Steps to Deploy Your Backend to Render
+        Create a Git Repository (if you haven't already):
+        
+        Push your code to GitHub, GitLab, or Bitbucket.
+        Sign up for Render:
+        
+        Go to render.com and create an account.
+        Create a New Web Service:
+        
+        Click "New" and select "Web Service".
+        Connect your Git repository.
+        Render will detect that it's a Node.js app.
+        Configure Your Web Service:
+        
+        Name: "socialmedia-backend" (or your preferred name)
+        Environment: Node
+        Build Command: npm install
+        Start Command: npm start
+        Set Environment Variables:
+        
+        In the Render dashboard, add these environment variables:
+        MONGO_DB: Your MongoDB connection string
+        JWT_KEY: Your secret key for JWT
+        Any other environment variables your app uses
+        Deploy:
+        
+        Click "Create Web Service" and Render will deploy your app.
+        File Storage Considerations:
+        
+        Your app handles file uploads. Note that Render's file system is ephemeral, so files uploaded through your app will disappear when the service restarts.
+        You should consider using a cloud storage service like AWS S3, Google Cloud Storage, or Cloudinary for storing images in production.
+        Verify Deployment:
+        
+        After deployment completes, Render will provide you with a URL for your service.
+        Test your API endpoints using this URL.
+        Would you like me to help you set up cloud storage for 
+      - key: PORT
+        value: 10000
